@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc1e5724cfb2404d9831168682671af, type: 3}
+  m_Name: AsteroidFactory
+  m_EditorClassIdentifier: UnityEngine:UnityEngine:ScriptableObject
+  asteroidPrefabs:
+  - {fileID: 189074, guid: d63c1ba12e0b95540b1140a1473bf44f, type: 2}
+  - {fileID: 149546, guid: f9d17efe2913e1540bc0b7e8e87ee7c0, type: 2}
+  - {fileID: 158010, guid: 07e0d7f1409e17745963b9a783de9027, type: 2}
