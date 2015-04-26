@@ -1,6 +1,6 @@
 ﻿using Ninject.Activation;
 
-namespace uInject.Provider
+namespace Ninject.Unity.Provider
 {
 	public class ObjectProvider<T> : Provider<T> where T : new()
 	{

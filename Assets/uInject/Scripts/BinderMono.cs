@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace uInject
+namespace Ninject.Unity
 {
 	/// <summary>
 	/// Implement this class to create the bindings specific to your application.

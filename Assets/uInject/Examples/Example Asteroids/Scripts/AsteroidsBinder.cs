@@ -1,6 +1,6 @@
 ﻿using Asteroids.Impl;
-using uInject;
-using uInject.Provider;
+using Ninject.Unity;
+using Ninject.Unity.Provider;
 
 namespace Asteroids
 {

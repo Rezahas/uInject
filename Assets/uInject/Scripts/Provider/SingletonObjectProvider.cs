@@ -1,4 +1,4 @@
-﻿namespace uInject.Provider
+﻿namespace Ninject.Unity.Provider
 {
 	public class SingletonObjectProvider<T> : SingletonProvider<T> where T : new()
 	{

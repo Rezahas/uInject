@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace uInject.Provider
+namespace Ninject.Unity.Provider
 {
 	public class ScriptableObjectProvider<T> : SingletonProvider<T> where T : ScriptableObject
 	{

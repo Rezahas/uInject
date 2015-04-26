@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace uInject
+namespace Ninject.Unity
 {
 	/// <summary>
 	/// Responsible for injections. No direct interaction should be necessary (exception: Providers).

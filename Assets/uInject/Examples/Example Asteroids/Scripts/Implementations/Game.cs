@@ -1,5 +1,5 @@
 ﻿using Ninject;
-using uInject;
+using Ninject.Unity;
 using UnityEngine;
 
 namespace Asteroids.Impl

@@ -2,7 +2,7 @@
 using Ninject.Activation;
 using System;
 
-namespace uInject
+namespace Ninject.Unity
 {
 	/// <summary>
 	/// Standard settings for used by the UnityKernel.

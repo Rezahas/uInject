@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace uInject.Provider
+namespace Ninject.Unity.Provider
 {
 	public class GameObjectFinder<T> : SingletonProvider<T> where T : MonoBehaviour
 	{

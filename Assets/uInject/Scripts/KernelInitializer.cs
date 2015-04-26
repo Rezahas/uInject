@@ -1,6 +1,6 @@
 ﻿using Ninject;
 
-namespace uInject
+namespace Ninject.Unity
 {
 	/// <summary>
 	/// Initializes the UnityKernel. Create a sub class and override GetSettings() to change the settings used by the UnityKernel.

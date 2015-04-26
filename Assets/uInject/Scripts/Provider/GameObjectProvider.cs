@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace uInject.Provider
+namespace Ninject.Unity.Provider
 {
 	public class GameObjectProvider<T> : Provider<T> where T : MonoBehaviour
 	{

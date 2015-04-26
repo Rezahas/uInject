@@ -1,6 +1,6 @@
 ﻿using Ninject.Activation;
 
-namespace uInject.Provider
+namespace Ninject.Unity.Provider
 {
 	public abstract class SingletonProvider<T> : Provider<T>
 	{

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace uInject.Provider
+namespace Ninject.Unity.Provider
 {
 	public class SingletonPrefabProvider<T> : SingletonProvider<T> where T : MonoBehaviour
 	{
