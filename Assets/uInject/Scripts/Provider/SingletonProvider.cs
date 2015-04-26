@@ -2,6 +2,9 @@
 
 namespace Ninject.Unity.Provider
 {
+	/// <summary>
+	/// Base class for Providers that always return the same instance.
+	/// </summary>
 	public abstract class SingletonProvider<T> : Provider<T>
 	{
 		private T instance;

@@ -10,6 +10,6 @@ namespace Ninject.Unity
 	public class PrefabBinding
 	{
 		public string type;
-		public GameObject prefabs;
+		public GameObject prefab;
 	}
 }

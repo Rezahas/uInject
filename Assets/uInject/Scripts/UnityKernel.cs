@@ -41,12 +41,28 @@ namespace Ninject.Unity
 
 		public GameObject GetPrefab(Type type)
 		{
-			return prefabDictionary[type];
+			if (prefabDictionary.ContainsKey(type))
+			{
+				return prefabDictionary[type];
+			}
+			else
+			{
+				Debug.LogError("Could not find a Prefab associated with the Type " + type + ". Make sure a prefab is associated with the Type in one of your BinderMono implementations.");
+				return null;
+			}
 		}
 
 		public ScriptableObject GetScriptableObject(Type type)
 		{
-			return scriptableObjectDictionary[type];
+			if (scriptableObjectDictionary.ContainsKey(type))
+			{
+				return scriptableObjectDictionary[type];
+			}
+			else
+			{
+				Debug.LogError("Could not find a ScriptableObject associated with the Type " + type + ". Make sure a ScriptableObject is associated with the Type in one of your BinderMono implementations.");
+				return null;
+			}
 		}
 
 		private void GetPrefabBindings(BinderMono[] binders)

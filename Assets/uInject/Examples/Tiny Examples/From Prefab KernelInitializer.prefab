@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabBindings:
   - type: RotatableImpl
-    prefabs: {fileID: 115718, guid: 0eaff1cab9ea95440ab2e6dd98193a1b, type: 2}
+    prefab: {fileID: 115718, guid: 0eaff1cab9ea95440ab2e6dd98193a1b, type: 2}
   scriptableObjectBindings: []
 --- !u!114 &11428154
 MonoBehaviour:

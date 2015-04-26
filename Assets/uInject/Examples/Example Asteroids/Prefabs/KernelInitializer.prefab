@@ -70,11 +70,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabBindings:
   - type: AsteroidSpawnerImpl
-    prefabs: {fileID: 103330, guid: 5677ef138e900164cb5d51870369dc56, type: 2}
+    prefab: {fileID: 103330, guid: 5677ef138e900164cb5d51870369dc56, type: 2}
   - type: OldGui
-    prefabs: {fileID: 149964, guid: 36d6fbefd00437b41903baefc2a486e4, type: 2}
+    prefab: {fileID: 149964, guid: 36d6fbefd00437b41903baefc2a486e4, type: 2}
   - type: NewGui
-    prefabs: {fileID: 195066, guid: 645c068299ea1224ab7762731be60a35, type: 2}
+    prefab: {fileID: 195066, guid: 645c068299ea1224ab7762731be60a35, type: 2}
   scriptableObjectBindings:
   - type: BeamFactoryImpl
     scriptableObject: {fileID: 11400000, guid: f7bf0778b2864ed49a30bfa6d31193d4, type: 2}

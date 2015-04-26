@@ -78,7 +78,7 @@ NavMeshSettings:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 128152, guid: abac8092474ac2d43af4c694f64631e8, type: 2}
-  m_PrefabInternal: {fileID: 1931531239}
+  m_PrefabInternal: {fileID: 1387428893}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 197145756}
@@ -94,7 +94,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 428152, guid: abac8092474ac2d43af4c694f64631e8, type: 2}
-  m_PrefabInternal: {fileID: 1931531239}
+  m_PrefabInternal: {fileID: 1387428893}
   m_GameObject: {fileID: 197145755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11428152, guid: abac8092474ac2d43af4c694f64631e8,
     type: 2}
-  m_PrefabInternal: {fileID: 1931531239}
+  m_PrefabInternal: {fileID: 1387428893}
   m_GameObject: {fileID: 197145755}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabBindings:
   - type: RotatableImpl
-    prefabs: {fileID: 115718, guid: 0eaff1cab9ea95440ab2e6dd98193a1b, type: 2}
+    prefab: {fileID: 115718, guid: 0eaff1cab9ea95440ab2e6dd98193a1b, type: 2}
   scriptableObjectBindings: []
 --- !u!1 &361275248
 GameObject:
@@ -225,7 +225,7 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 128154, guid: abac8092474ac2d43af4c694f64631e8, type: 2}
-  m_PrefabInternal: {fileID: 1931531239}
+  m_PrefabInternal: {fileID: 1387428893}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 749907166}
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11428154, guid: abac8092474ac2d43af4c694f64631e8,
     type: 2}
-  m_PrefabInternal: {fileID: 1931531239}
+  m_PrefabInternal: {fileID: 1387428893}
   m_GameObject: {fileID: 749907164}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 428154, guid: abac8092474ac2d43af4c694f64631e8, type: 2}
-  m_PrefabInternal: {fileID: 1931531239}
+  m_PrefabInternal: {fileID: 1387428893}
   m_GameObject: {fileID: 749907164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -346,7 +346,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1001 &1931531239
+--- !u!1001 &1387428893
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
