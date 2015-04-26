@@ -1,15 +1,16 @@
-﻿using UnityEngine;
+﻿using Ninject.Activation;
+using UnityEngine;
 
 namespace Ninject.Unity.Provider
 {
 	/// <summary>
 	/// Provider for ScriptableObjects.
 	/// </summary>
-	public class ScriptableObjectProvider<T> : SingletonProvider<T> where T : ScriptableObject
+	public class ScriptableObjectProvider<T> : Provider<T> where T : ScriptableObject
 	{
-		protected override T CreateInstance()
+		public override object Create(IContext context)
 		{
-			return (T)UnityKernel.INSTANCE.GetScriptableObject(Type);
+			return UnityKernel.INSTANCE.GetScriptableObject(Type);
 		}
 	}
 }
