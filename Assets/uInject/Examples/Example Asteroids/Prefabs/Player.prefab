@@ -29,7 +29,6 @@ GameObject:
   - 114: {fileID: 11459596}
   - 114: {fileID: 11488444}
   - 114: {fileID: 11452866}
-  - 114: {fileID: 11408016}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -88,17 +87,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .400000006
   m_Center: {x: 0, y: 0}
---- !u!114 &11408016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc008d4aababe9c4581923a282231f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11452866
 MonoBehaviour:
   m_ObjectHideFlags: 1

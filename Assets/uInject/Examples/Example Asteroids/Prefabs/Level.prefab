@@ -26,7 +26,6 @@ GameObject:
   - 4: {fileID: 459764}
   - 212: {fileID: 21259768}
   - 61: {fileID: 6159768}
-  - 114: {fileID: 11459774}
   m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
@@ -44,7 +43,6 @@ GameObject:
   - 4: {fileID: 459766}
   - 212: {fileID: 21259770}
   - 61: {fileID: 6159770}
-  - 114: {fileID: 11459772}
   m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
@@ -62,7 +60,6 @@ GameObject:
   - 4: {fileID: 459768}
   - 212: {fileID: 21259772}
   - 61: {fileID: 6159772}
-  - 114: {fileID: 11459770}
   m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
@@ -80,7 +77,6 @@ GameObject:
   - 4: {fileID: 459770}
   - 212: {fileID: 21259774}
   - 61: {fileID: 6159774}
-  - 114: {fileID: 11459768}
   m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
@@ -252,50 +248,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: 1, y: 30}
   m_Center: {x: 0, y: 0}
---- !u!114 &11459768
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55eca8965f77e414c9d7f8e6f2ed7c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11459770
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55eca8965f77e414c9d7f8e6f2ed7c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11459772
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55eca8965f77e414c9d7f8e6f2ed7c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11459774
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55eca8965f77e414c9d7f8e6f2ed7c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &21259766
 SpriteRenderer:
   m_ObjectHideFlags: 1
