@@ -26,8 +26,8 @@ Simply open up your binder in the Inspector and add entries to "Prefab Bindings"
 Drag the Prefab or Scriptable Object into the corresponding field. To use these Prefabs/Scriptable Objects in your applications, create bindings in your Binder-class.
 (i.e. binding.Bind<AsteroidSpawner>().ToProvider<PrefabProvider<AsteroidSpawnerImpl>>().InSingletonScope();)
 
-5. Also take a look at the examples under Assets/uInject/Examples. For questions/suggestions/bug reports/words of encouragement you can contact me via the git repository (https://github.com/shiroto/uInject/),
-the Unity3D forums (http://forum.unity3d.com/members/shiroto.152269/) or e-mail (shiroto742@gmail.com). Please keep in mind that I am doing this in my free time and don't charge for this software,
+5. Also take a look at the examples under Assets/uInject/Examples. For questions/suggestions/bug reports/words of encouragement you can contact me via the git repository (https://github.com/Rezahas/uInject/),
+the Unity3D forums (http://forum.unity3d.com/members/rezahas.832830/) or e-mail (support@rezahas.com). Please keep in mind that I am doing this in my free time and don't charge for this software,
 although I will try to get back to you as soon as possible, it may take several days.
 
 6. You are very welcome to fork the project on github and make pull requests so everyone can benifit from your improvements!
