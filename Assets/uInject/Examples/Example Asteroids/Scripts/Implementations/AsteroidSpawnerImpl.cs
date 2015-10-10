@@ -80,7 +80,7 @@ namespace Asteroids.Impl
 		{
 			GameObject go = AsteroidFactory.GetAsteroid(i);
 			go.transform.position = GetSpawnPosition();
-			go.rigidbody2D.AddForce(GetSpawnInertia(go.transform.position));
+			go.GetComponent<Rigidbody2D>().AddForce(GetSpawnInertia(go.transform.position));
 		}
 
 		private Vector3 GetSpawnPosition()

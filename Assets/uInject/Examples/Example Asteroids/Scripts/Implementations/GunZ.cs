@@ -27,7 +27,7 @@ namespace Asteroids.Impl
 				beam.transform.position = muzzle.position;
 				beam.transform.rotation = muzzle.rotation;
 				Vector3 force = beam.transform.up * speed;
-				beam.rigidbody2D.AddForce(force);
+				beam.GetComponent<Rigidbody2D>().AddForce(force);
 			}
 		}
 	}
