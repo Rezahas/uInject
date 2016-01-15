@@ -1,4 +1,6 @@
 ﻿using Ninject;
+using System.Linq;
+using UnityEngine;
 
 namespace Ninject.Unity
 {
@@ -8,6 +10,8 @@ namespace Ninject.Unity
 	/// </summary>
 	public class KernelInitializer : AMono
 	{
+		public BinderMono[] binderPrefabs;
+
 		protected virtual INinjectSettings GetSettings()
 		{
 			return new StandardSettings();
@@ -15,7 +19,8 @@ namespace Ninject.Unity
 
 		protected override void Awake()
 		{
-			new UnityKernel(GetComponentsInChildren<BinderMono>(), GetSettings());
+			BinderMono[] objs = binderPrefabs.Select(p => GameObject.Instantiate<BinderMono>(p)).ToArray();
+			new UnityKernel(objs, GetSettings());
 		}
 	}
 }
