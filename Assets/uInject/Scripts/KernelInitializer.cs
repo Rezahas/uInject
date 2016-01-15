@@ -1,5 +1,4 @@
-﻿using Ninject;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 
 namespace Ninject.Unity
@@ -19,7 +18,7 @@ namespace Ninject.Unity
 
 		protected override void Awake()
 		{
-			BinderMono[] objs = binderPrefabs.Select(p => GameObject.Instantiate<BinderMono>(p)).ToArray();
+			BinderMono[] objs = binderPrefabs.SelectMany(p => GameObject.Instantiate(p).GetComponents<BinderMono>()).ToArray();
 			new UnityKernel(objs, GetSettings());
 		}
 	}
