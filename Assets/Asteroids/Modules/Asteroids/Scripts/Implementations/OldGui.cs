@@ -1,6 +1,8 @@
-﻿namespace Asteroids.Impl
+﻿using UnityEngine;
+
+namespace Asteroids.Impl
 {
-	public class OldGui : AMono, Gui
+	public class OldGui : MonoBehaviour, Gui
 	{
 		public TimeGuiImpl timeGui;
 

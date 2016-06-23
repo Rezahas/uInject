@@ -7,7 +7,7 @@ namespace Ninject.Unity
 	/// Initializes the UnityKernel. Create a sub class and override GetSettings() to change the settings used by the UnityKernel.
 	/// Make sure that this is the first entry in your Script Execution Order.
 	/// </summary>
-	public class KernelInitializer : AMono
+	public class KernelInitializer : MonoBehaviour
 	{
 		public BinderMono[] binderPrefabs;
 
@@ -16,7 +16,7 @@ namespace Ninject.Unity
 			return new StandardSettings();
 		}
 
-		protected override void Awake()
+		protected virtual void Awake()
 		{
 			BinderMono[] objs = binderPrefabs.SelectMany(p => GameObject.Instantiate(p).GetComponents<BinderMono>()).ToArray();
 			new UnityKernel(objs, GetSettings());

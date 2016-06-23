@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Asteroids.Impl
 {
-	public class TimeLabel : AMono, TimeGui
+	public sealed class TimeLabel : MonoBehaviour, TimeGui
 	{
 		public Text text;
 
@@ -13,7 +13,7 @@ namespace Asteroids.Impl
 			set;
 		}
 
-		protected override void Update()
+		private void Update()
 		{
 			text.text = Time.ToString();
 		}

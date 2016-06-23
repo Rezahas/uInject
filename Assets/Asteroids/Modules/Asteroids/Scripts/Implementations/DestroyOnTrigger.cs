@@ -2,7 +2,7 @@
 
 namespace Asteroids.Impl
 {
-	public class DestroyOnTrigger : AMono
+	public class DestroyOnTrigger : MonoBehaviour
 	{
 		private void OnTriggerEnter2D(Collider2D other)
 		{

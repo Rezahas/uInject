@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Asteroids.Impl
 {
-	public class Game : DIMono
+	public sealed class Game : DIMono
 	{
 		public float switchToMediumTime;
 		public float switchToDifficultTime;
@@ -23,12 +23,12 @@ namespace Asteroids.Impl
 			set;
 		}
 
-		protected override void Start()
+		private void Start()
 		{
 			AsteroidSpawner.StartSpawning(SpawnMode.EASY);
 		}
 
-		protected override void Update()
+		private void Update()
 		{
 			float t = Time.time;
 			Gui.TimeGui.Time = t;

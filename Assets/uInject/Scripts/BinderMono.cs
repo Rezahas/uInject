@@ -11,7 +11,7 @@ namespace Ninject.Unity
 	/// Implement this class to create the bindings specific to your application.
 	/// </summary>
 	[Serializable]
-	public abstract class BinderMono : AMono
+	public abstract class BinderMono : MonoBehaviour
 	{
 		public PrefabBinding[] prefabBindings;
 		public ScriptableObjectBinding[] scriptableObjectBindings;
@@ -28,7 +28,7 @@ namespace Ninject.Unity
 			return scriptableObjectBindings.ToDictionary(b => GetType(b.type), b => b.scriptableObject);
 		}
 
-		protected override void Awake()
+		protected virtual void Awake()
 		{
 #if UNITY_EDITOR
 			CheckPrefabBindings();

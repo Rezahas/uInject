@@ -9,11 +9,8 @@ namespace Async.Impl
 {
 	public sealed class ManagedAsyncOperation<T> : Task<T>
 	{
-		public event Action<Task> OnProgressChanged = delegate { };
-
-		public event Action<Task, T> OnDone = delegate { };
-
 		private Func<T> results;
+
 		private ManagedAsyncOperation monoBehaviour;
 
 		public float Progress
@@ -31,6 +28,10 @@ namespace Async.Impl
 				return monoBehaviour.IsDone;
 			}
 		}
+
+		public event Action<Task> OnProgressChanged = delegate { };
+
+		public event Action<Task, T> OnDone = delegate { };
 
 		public ManagedAsyncOperation(IEnumerable<Action> actions, Func<T> results)
 		{
@@ -53,13 +54,10 @@ namespace Async.Impl
 		}
 	}
 
-	public sealed class ManagedAsyncOperation : AMono
+	public sealed class ManagedAsyncOperation : MonoBehaviour
 	{
-		public event Action OnProgressChanged = delegate { };
-
-		public event Action OnDone = delegate { };
-
 		private Action[] actions;
+
 		private int currentAction;
 
 		public float Progress
@@ -76,6 +74,10 @@ namespace Async.Impl
 			}
 		}
 
+		public event Action OnProgressChanged = delegate { };
+
+		public event Action OnDone = delegate { };
+
 		public void Init(IEnumerable<Action> actions)
 		{
 			this.actions = actions.ToArray();
@@ -83,16 +85,14 @@ namespace Async.Impl
 			enabled = true;
 		}
 
-		protected override void Awake()
+		private void Awake()
 		{
-			base.Awake();
-			GameObject.DontDestroyOnLoad(gameObject);
+			DontDestroyOnLoad(gameObject);
 			enabled = false;
 		}
 
-		protected override void Update()
+		private void Update()
 		{
-			base.Update();
 			actions[currentAction]();
 			currentAction++;
 			Progress = (float)currentAction / actions.Length;
@@ -103,7 +103,7 @@ namespace Async.Impl
 				enabled = false;
 				OnProgressChanged = null;
 				OnDone = null;
-				GameObject.Destroy(gameObject);
+				Destroy(gameObject);
 			}
 		}
 	}

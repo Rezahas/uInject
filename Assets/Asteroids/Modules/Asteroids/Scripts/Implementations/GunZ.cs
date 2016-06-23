@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Asteroids.Impl
 {
-	public class GunZ : DIMono
+	public sealed class GunZ : DIMono
 	{
 		public float speed;
 		public float shotCooldown;
@@ -18,7 +18,7 @@ namespace Asteroids.Impl
 			set;
 		}
 
-		protected override void Update()
+		private void Update()
 		{
 			if (Input.GetAxis("Fire1") > 0 && lastShot + shotCooldown < Time.time)
 			{

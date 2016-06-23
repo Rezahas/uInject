@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TinyExamples
 {
-	public class ObjectRotator : DIMono
+	public sealed class ObjectRotator : DIMono
 	{
 		public Vector3 axis;
 
@@ -15,7 +15,7 @@ namespace TinyExamples
 			set;
 		}
 
-		protected override void Update()
+		private void Update()
 		{
 			Rotatable.RotateAround(axis);
 		}

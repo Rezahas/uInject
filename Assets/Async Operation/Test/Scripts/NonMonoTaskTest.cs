@@ -7,14 +7,13 @@ using UnityEngine;
 
 namespace Async.Test
 {
-	public class NonMonoTaskTest : AMono
+	public sealed class NonMonoTaskTest : MonoBehaviour
 	{
 		private Task<float> op;
 		private List<Task> ops;
 
-		protected override void Start()
+		private void Start()
 		{
-			base.Start();
 			ops = new List<Task>();
 			op = UnityKernel.INSTANCE.Get<NonMonoTask>().Foo();
 			op.OnProgressChanged += OnProgressChanged;

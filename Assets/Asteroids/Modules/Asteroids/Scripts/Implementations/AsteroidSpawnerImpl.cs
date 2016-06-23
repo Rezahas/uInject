@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Asteroids.Impl
 {
-	public class AsteroidSpawnerImpl : AMono, AsteroidSpawner
+	public sealed class AsteroidSpawnerImpl : MonoBehaviour, AsteroidSpawner
 	{
 		public int minInertia, maxInertia;
 		public float[] easySpawnFrequency;
@@ -58,13 +58,13 @@ namespace Asteroids.Impl
 			enabled = false;
 		}
 
-		protected override void Awake()
+		private void Awake()
 		{
 			enabled = false;
 			spawnPositions = GetComponentsInChildren<Transform>().Except(new Transform[] { transform }).Select(t => t.position).ToArray();
 		}
 
-		protected override void Update()
+		private void Update()
 		{
 			for (int i = 0; i < spawnFrequency.Length; i++)
 			{

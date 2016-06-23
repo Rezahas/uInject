@@ -2,12 +2,12 @@
 
 namespace Asteroids.Impl
 {
-	public class ShipControls : AMono
+	public sealed class ShipControls : MonoBehaviour
 	{
 		public float speed;
 		public float rotationSpeed;
 
-		protected override void Update()
+		private void Update()
 		{
 			float h = Input.GetAxis("Horizontal");
 			transform.Rotate(transform.forward, -h * rotationSpeed);

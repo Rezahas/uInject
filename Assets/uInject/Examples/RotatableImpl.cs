@@ -2,7 +2,7 @@
 
 namespace TinyExamples
 {
-	public class RotatableImpl : AMono, Rotatable
+	public class RotatableImpl : MonoBehaviour, Rotatable
 	{
 		public void RotateAround(Vector3 vector)
 		{
