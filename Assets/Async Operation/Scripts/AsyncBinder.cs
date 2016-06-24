@@ -9,7 +9,6 @@ namespace Async
 		public override void Bind(Ninject.Syntax.IBindingRoot binding)
 		{
 			binding.Bind<AsyncOperationFactory>().To<AsyncOperationFactoryImpl>().InSingletonScope();
-			binding.Bind<ManagedAsyncOperation>().ToProvider<GameObjectProvider<ManagedAsyncOperation>>().InTransientScope();
 		}
 	}
 }

@@ -2,7 +2,7 @@
 
 namespace Async.Impl
 {
-	public sealed class AsyncOperationImpl<T> : Task<T>
+	public sealed class UnmanagedOperation<T> : Task<T>
 	{
 		public event Action<Task> OnProgressChanged = delegate { };
 
@@ -24,7 +24,7 @@ namespace Async.Impl
 			}
 		}
 
-		public AsyncOperationImpl(Func<T> results)
+		public UnmanagedOperation(Func<T> results)
 		{
 			this.results = results;
 		}

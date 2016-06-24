@@ -1,10 +1,18 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Async
 {
 	public interface AsyncOperationFactory
 	{
+		int PoolSize
+		{
+			get;
+		}
+
+		void SetPoolSize(int size);
+
 		/// <summary>
 		/// Creates an AsyncOperation that is managed by the caller. All it does is share information about the progress of the operation.
 		/// </summary>
@@ -20,6 +28,21 @@ namespace Async
 		/// <param name="progressFunction">Function that sets the current progress of the operation. Value 1 or above will be considered as "done".</param>
 		/// <returns>The AsyncOperation object encapsulating the operation.</returns>
 		Task<T> Create<T>(Func<T> results, out Action<float> progressFunction);
+
+		/// <summary>
+		/// Creates an AsyncOperation that is run as a coroutine.
+		/// </summary>
+		/// <param name="coroutine">The coroutine.</param>
+		/// <returns>The AsyncOperation object encapsulating the operation.</returns>
+		Task<EmptyResult> Create(IEnumerator coroutine);
+
+		/// <summary>
+		/// Creates an AsyncOperation that is run as a coroutine.
+		/// </summary>
+		/// <param name="results">Function that returns the results upon completion.</param>
+		/// <param name="coroutine">The coroutine.</param>
+		/// <returns>The AsyncOperation object encapsulating the operation.</returns>
+		Task<T> Create<T>(Func<T> results, IEnumerator coroutine);
 
 		/// <summary>
 		/// Creates an AsyncOperation that is managed internally. All given actions will be called once in the given order.

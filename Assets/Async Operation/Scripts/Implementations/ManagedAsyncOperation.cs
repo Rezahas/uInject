@@ -1,9 +1,4 @@
-﻿using Ninject;
-using Ninject.Unity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using System;
 
 namespace Async.Impl
 {
@@ -11,7 +6,7 @@ namespace Async.Impl
 	{
 		private Func<T> results;
 
-		private ManagedAsyncOperation monoBehaviour;
+		private AOperationMono monoBehaviour;
 
 		public float Progress
 		{
@@ -33,11 +28,10 @@ namespace Async.Impl
 
 		public event Action<Task, T> OnDone = delegate { };
 
-		public ManagedAsyncOperation(IEnumerable<Action> actions, Func<T> results)
+		public ManagedAsyncOperation(AOperationMono monoBehaviour, Func<T> results)
 		{
 			this.results = results;
-			monoBehaviour = UnityKernel.INSTANCE.Get<ManagedAsyncOperation>();
-			monoBehaviour.Init(actions);
+			this.monoBehaviour = monoBehaviour;
 			monoBehaviour.OnProgressChanged += ProgressChanged;
 			monoBehaviour.OnDone += Done;
 		}
@@ -50,61 +44,9 @@ namespace Async.Impl
 		private void Done()
 		{
 			OnDone(this, results());
+			monoBehaviour.OnProgressChanged -= ProgressChanged;
+			monoBehaviour.OnDone -= Done;
 			monoBehaviour = null;
-		}
-	}
-
-	public sealed class ManagedAsyncOperation : MonoBehaviour
-	{
-		private Action[] actions;
-
-		private int currentAction;
-
-		public float Progress
-		{
-			get;
-			private set;
-		}
-
-		public bool IsDone
-		{
-			get
-			{
-				return Progress >= 1;
-			}
-		}
-
-		public event Action OnProgressChanged = delegate { };
-
-		public event Action OnDone = delegate { };
-
-		public void Init(IEnumerable<Action> actions)
-		{
-			this.actions = actions.ToArray();
-			currentAction = 0;
-			enabled = true;
-		}
-
-		private void Awake()
-		{
-			DontDestroyOnLoad(gameObject);
-			enabled = false;
-		}
-
-		private void Update()
-		{
-			actions[currentAction]();
-			currentAction++;
-			Progress = (float)currentAction / actions.Length;
-			OnProgressChanged();
-			if (IsDone)
-			{
-				OnDone();
-				enabled = false;
-				OnProgressChanged = null;
-				OnDone = null;
-				Destroy(gameObject);
-			}
 		}
 	}
 }
