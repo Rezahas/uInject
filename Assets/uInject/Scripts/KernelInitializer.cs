@@ -18,8 +18,12 @@ namespace Ninject.Unity
 
 		protected virtual void Awake()
 		{
-			BinderMono[] objs = binderPrefabs.SelectMany(p => GameObject.Instantiate(p).GetComponents<BinderMono>()).ToArray();
+			BinderMono[] objs = binderPrefabs.SelectMany(p => Instantiate(p).GetComponents<BinderMono>()).ToArray();
 			new UnityKernel(objs, GetSettings());
+			foreach (BinderMono bm in objs)
+			{
+				Destroy(bm.gameObject);
+			}
 		}
 	}
 }

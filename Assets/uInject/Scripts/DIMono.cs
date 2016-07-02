@@ -7,9 +7,16 @@ namespace Ninject.Unity
 	/// </summary>
 	public abstract class DIMono : MonoBehaviour
 	{
+		protected bool IsInjected
+		{
+			get;
+			private set;
+		}
+
 		protected virtual void Awake()
 		{
 			UnityKernel.INSTANCE.Inject(this);
+			IsInjected = true;
 		}
 	}
 }

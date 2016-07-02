@@ -40,9 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bdf263ef7f6ef341980f85a1fb9f2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  binderPrefabs:
-  - {fileID: 11481856, guid: b6658b80dabd1e74aa7d920581624fd4, type: 2}
-  - {fileID: 11454374, guid: 57adc9abfdb906c4792572fd6c6cd504, type: 2}
+  binderPrefabs: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
