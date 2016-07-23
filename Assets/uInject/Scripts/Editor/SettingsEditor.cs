@@ -1,4 +1,5 @@
 ﻿using Ninject.Unity.Internal;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -33,16 +34,9 @@ namespace Ninject.Unity.Editor
 		{
 			DrawNewModule();
 			EditorGUILayout.Separator();
-			DrawPackage();
-		}
-
-		private static void DrawPackage()
-		{
-			if (GUILayout.Button("Export Unity Package"))
-			{
-				ExportPackageOptions options = ExportPackageOptions.Interactive | ExportPackageOptions.Recurse;
-				AssetDatabase.ExportPackage("Assets/uInject", "uInject.unitypackage", options);
-			}
+			DrawExportUInject();
+			EditorGUILayout.Separator();
+			DrawExportModules();
 		}
 
 		private void DrawNewModule()
@@ -52,6 +46,59 @@ namespace Ninject.Unity.Editor
 			if (GUILayout.Button("Create"))
 			{
 				ModuleFactory.CreateModule(newModuleName);
+			}
+		}
+
+		private void DrawExportUInject()
+		{
+			EditorGUILayout.LabelField("Export uInject Unity Package");
+			if (GUILayout.Button("Export"))
+			{
+				ExportPackageOptions options = ExportPackageOptions.Interactive | ExportPackageOptions.Recurse;
+				AssetDatabase.ExportPackage("Assets/uInject", "uInject.unitypackage", options);
+			}
+		}
+
+		private void DrawExportModules()
+		{
+			Settings s = (Settings)target;
+			if (s.exportPaths.Count == 0 || s.exportPaths.Last() != "")
+			{
+				s.exportPaths.Add("");
+			}
+			EditorGUILayout.LabelField("Export Modules");
+			for (int i = 0; i < s.exportPaths.Count; i++)
+			{
+				EditorGUILayout.BeginHorizontal();
+				EditorGUILayout.PrefixLabel("Module");
+				s.exportPaths[i] = EditorGUILayout.TextField(s.exportPaths[i]);
+				if (GUILayout.Button("X"))
+				{
+					s.exportPaths.RemoveAt(i);
+				}
+				EditorGUILayout.EndHorizontal();
+			}
+			EditorGUILayout.PrefixLabel("Module");
+			EditorGUILayout.BeginHorizontal();
+			EditorGUILayout.PrefixLabel("Package Name");
+			s.packageName = EditorGUILayout.TextField(s.packageName);
+			EditorGUILayout.EndHorizontal();
+			if (GUILayout.Button("Export"))
+			{
+				if (!s.packageName.EndsWith(".unitypackage"))
+				{
+					s.packageName += ".unitypackage";
+				}
+				s.exportPaths.RemoveAt(s.exportPaths.Count - 1);
+				for (int i = 0; i < s.exportPaths.Count; i++)
+				{
+					if (!s.exportPaths[i].StartsWith("Assets/"))
+					{
+						s.exportPaths[i] = "Assets/" + s.exportPaths[i];
+					}
+				}
+				ExportPackageOptions options = ExportPackageOptions.Interactive | ExportPackageOptions.Recurse | ExportPackageOptions.IncludeDependencies;
+				AssetDatabase.ExportPackage(s.exportPaths.ToArray(), s.packageName, options);
 			}
 		}
 	}
