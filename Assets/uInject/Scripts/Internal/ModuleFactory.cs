@@ -14,6 +14,7 @@ namespace Ninject.Unity.Internal
 		private const string SCRIPTS_DIR_NAME = "Scripts";
 		private const string INTERFACES_DIR_NAME = "Interfaces";
 		private const string IMPLEMENTATIONS_DIR_NAME = "Implementations";
+		private const string BINDER_TEMPLATE_PATH = "uInject/Templates/BinderTemplate.cs";
 
 		public static void CreateModule(string moduleName)
 		{
@@ -79,7 +80,7 @@ namespace Ninject.Unity.Internal
 		{
 			string className = moduleName + "Binder";
 			string fileName = className + ".cs";
-			string binderTemplate = Path.Combine(Application.dataPath, "uInject/Res/BinderTemplate.cs");
+			string binderTemplate = Path.Combine(Application.dataPath, BINDER_TEMPLATE_PATH);
 			string binderMono = Path.Combine(scriptPath, fileName);
 			StreamReader reader = new StreamReader(new FileStream(binderTemplate, FileMode.Open));
 			StreamWriter writer = new StreamWriter(File.Create(binderMono));
