@@ -55,7 +55,7 @@ namespace Ninject.Unity.Editor
 			if (GUILayout.Button("Export"))
 			{
 				ExportPackageOptions options = ExportPackageOptions.Interactive | ExportPackageOptions.Recurse;
-				AssetDatabase.ExportPackage("Assets/uInject", "uInject.unitypackage", options);
+				AssetDatabase.ExportPackage("Assets/uInject Base", "uInject.unitypackage", options);
 			}
 		}
 
