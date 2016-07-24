@@ -14,7 +14,7 @@ namespace Ninject.Unity.Internal
 		private const string SCRIPTS_DIR_NAME = "Scripts";
 		private const string INTERFACES_DIR_NAME = "Interfaces";
 		private const string IMPLEMENTATIONS_DIR_NAME = "Implementations";
-		private const string BINDER_TEMPLATE_PATH = "uInject/Templates/BinderTemplate.cs";
+		private const string BINDER_TEMPLATE_PATH = "uInject Base/Templates/BinderTemplate.cs";
 
 		public static void CreateModule(string moduleName)
 		{
